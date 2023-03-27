@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 
 class Service(models.Model):
@@ -29,16 +31,28 @@ class Information(models.Model):
     def __str__(self):
         return self.address1
 
+
+class Slider(models.Model):
+    name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='media')
+    url = models.URLField(max_length=500,blank = True)
+    description = models.TextField(blank = True)
+
+    def __str__(self):
+        return self.name
+
 class Ad(models.Model):
     name = models.CharField(max_length=200)
     image = models.ImageField(upload_to='media')
     description = models.TextField(blank=True)
+    rank = models.IntegerField()
 
     def __str__(self):
         return self.name
 
 class Category(models.Model):
     name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='media')
     slug = models.CharField(max_length=500,unique=True)
     def __str__(self):
         return self.name
@@ -67,3 +81,68 @@ class Product(models.Model):
     status = models.CharField(choices=STATUS, max_length=50)
     def __str__(self):
         return self.name
+
+class Wishlist(models.Model):
+    username = models.CharField(max_length=300)
+    name = models.CharField(max_length=200)
+    products = models.ManyToManyField(Product, blank=True)
+
+    def __str__(self):
+        return self.name
+
+class Cart(models.Model):
+    username = models.CharField(max_length=300)
+    slug = models.CharField(max_length=300)
+    quantity = models.IntegerField()
+    total = models.IntegerField()
+    date = models.DateTimeField(auto_now_add=True)
+    checkout = models.BooleanField(default = False)
+    items = models.ForeignKey(Product,on_delete=models.CASCADE)
+    def __str__(self):
+        return self.username
+
+class BlogPost(models.Model):
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, unique=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    published = models.BooleanField(default=False)
+    categories = models.ManyToManyField(Category)
+
+    def __str__(self):
+        return self.title
+class BlogComment(models.Model):
+    post = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
+    author = models.CharField(max_length=100)
+    email = models.EmailField()
+    body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.post.title
+
+class Checkout(models.Model):
+    username = models.CharField(max_length=300)
+    products = models.ManyToManyField(Product)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    is_completed = models.BooleanField(default=False)
+    total_price = models.DecimalField(max_digits=8, decimal_places=2)
+    def __str__(self):
+        return self.username
+
+class Gallery(models.Model):
+    name = models.CharField(max_length=300)
+    image = models.ImageField(upload_to='media')
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+
+
+
+

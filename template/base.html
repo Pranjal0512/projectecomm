@@ -8,20 +8,20 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
-		<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}">
+		<link rel="shortcut icon" type="image/x-icon" href="{% static '/img/favicon.ico' %}">
 
 		<!-- CSS here -->
-            <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-            <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
-            <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
-            <link rel="stylesheet" href="{% static 'assets/css/slicknav.css' %}">
-            <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
-            <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
-            <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
-            <link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
-            <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
-            <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
-            <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+            <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+            <link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}">
+            <link rel="stylesheet" href="{% static '/css/flaticon.css' %}">
+            <link rel="stylesheet" href="{% static '/css/slicknav.css' %}">
+            <link rel="stylesheet" href="{% static '/css/animate.min.css' %}">
+            <link rel="stylesheet" href="{% static '/css/magnific-popup.css' %}">
+            <link rel="stylesheet" href="{% static '/css/fontawesome-all.min.css' %}">
+            <link rel="stylesheet" href="{% static '/css/themify-icons.css' %}">
+            <link rel="stylesheet" href="{% static '/css/slick.css' %}">
+            <link rel="stylesheet" href="{% static '/css/nice-select.css' %}">
+            <link rel="stylesheet" href="{% static '/css/style.css' %}">
    </head>
 
    <body>
@@ -32,7 +32,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="{% static 'assets/img/logo/logo.png' %}" alt="">
+                    <img src="{% static '/img/logo/logo.png' %}" alt="">
                 </div>
             </div>
         </div>
@@ -49,22 +49,22 @@
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="header-info-left d-flex">
                                     <div class="flag">
-                                        <img src="{% static 'assets/img/icon/header_icon.png' %}" alt="">
+                                        <img src="{% static '/img/icon/header_icon.png' %}" alt="">
                                     </div>
                                     <div class="select-this">
                                         <form action="#">
                                             <div class="select-itms">
                                                 <select name="select" id="select1">
-                                                    <option value="">USA</option>
-                                                    <option value="">SPN</option>
-                                                    <option value="">CDA</option>
-                                                    <option value="">USD</option>
+                                                    <option value="">NEPAL</option>
+                                                    <option value="">INDIA</option>
+                                                    <option value="">CHINA</option>
+                                                    <option value="">CANADA</option>
                                                 </select>
                                             </div>
                                         </form>
                                     </div>
                                     <ul class="contact-now">
-                                        <li>+777 2345 7886</li>
+                                        <li>+977 982-3457-886</li>
                                     </ul>
                                 </div>
                                 <div class="header-info-right">
@@ -86,7 +86,7 @@
                             <!-- Logo -->
                             <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3">
                                 <div class="logo">
-                                  <a href="index.html"><img src="{% static 'assets/img/logo/logo.png' %}" alt=""></a>
+                                  <a href="index.html"><img src="{% static '/img/logo/logo.png' %}" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-8 col-md-7 col-sm-5">
@@ -158,10 +158,9 @@
        </div>
         <!-- Header End -->
     </header>
+{% block content %}
 
-    {% block content %}
-
-    {% endblock %}
+{% endblock %}
     <footer>
     <!-- Footer Start-->
        <div class="footer-area footer-padding">
@@ -172,7 +171,7 @@
                         <div class="single-footer-caption mb-30">
                              <!-- logo -->
                             <div class="footer-logo">
-                                <a href="index.html"><img src="{% static 'assets/img/logo/logo2_footer.png' %}" alt=""></a>
+                                <a href="index.html"><img src="{% static '/img/logo/logo2_footer.png' %}" alt=""></a>
                             </div>
                             <div class="footer-tittle">
                                 <div class="footer-pera">
@@ -252,38 +251,38 @@
 	<!-- JS here -->
 
 		<!-- All JS Custom Plugins Link Here here -->
-        <script src="{% static './assets/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+        <script src="{% static '/js/vendor/modernizr-3.5.0.min.js' %}"></script>
 		<!-- Jquery, Popper, Bootstrap -->
-		<script src="{% static './assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
-        <script src="{% static './assets/js/popper.min.js' %}"></script>
-        <script src="{% static './assets/js/bootstrap.min.js' %}"></script>
+		<script src="{% static '/js/vendor/jquery-1.12.4.min.js' %}"></script>
+        <script src="{% static '/js/popper.min.js' %}"></script>
+        <script src="{% static '/js/bootstrap.min.js' %}"></script>
 	    <!-- Jquery Mobile Menu -->
-        <script src="{% static './assets/js/jquery.slicknav.min.js' %}"></script>
+        <script src="{% static '/js/jquery.slicknav.min.js' %}"></script>
 
 		<!-- Jquery Slick , Owl-Carousel Plugins -->
-        <script src="{% static './assets/js/owl.carousel.min.js' %}"></script>
-        <script src="{% static './assets/js/slick.min.js' %}"></script>
+        <script src="{% static '/js/owl.carousel.min.js' %}"></script>
+        <script src="{% static '/js/slickin.js' %}"></script>
 
 		<!-- One Page, Animated-HeadLin -->
-        <script src="{% static './assets/js/wow.min.js' %}"></script>
-		<script src="{% static './assets/js/animated.headline.js' %}"></script>
-        <script src="{% static './assets/js/jquery.magnific-popup.js' %}"></script>
+        <script src="{% static '/js/wow.min.js' %}"></script>
+		<script src="{% static '/js/animated.headline.js' %}"></script>
+        <script src="{% static '/js/jquery.magnific-popup.js' %}"></script>
 
 		<!-- Scrollup, nice-select, sticky -->
-        <script src="{% static './assets/js/jquery.scrollUp.min.js' %}"></script>
-        <script src="{% static './assets/js/jquery.nice-select.min.js' %}"></script>
-		<script src="{% static './assets/js/jquery.sticky.js' %}"></script>
+        <script src="{% static '/js/jquery.scrollUp.min.js' %}"></script>
+        <script src="{% static '/js/jquery.nice-select.min.js' %}"></script>
+		<script src="{% static '/js/jquery.sticky.js' %}"></script>
 
         <!-- contact js -->
-        <script src="{% static './assets/js/contact.js' %}"></script>
-        <script src="{% static './assets/js/jquery.form.js' %}"></script>
-        <script src="{% static './assets/js/jquery.validate.min.js' %}"></script>
-        <script src="{% static './assets/js/mail-script.js' %}"></script>
-        <script src="{% static './assets/js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static '/js/contact.js' %}"></script>
+        <script src="{% static '/js/jquery.form.js' %}"></script>
+        <script src="{% static '/js/jquery.validate.min.js' %}"></script>
+        <script src="{% static '/js/mail-script.js' %}"></script>
+        <script src="{% static '/js/jquery.ajaxchimp.min.js' %}"></script>
 
 		<!-- Jquery Plugins, main Jquery -->
-        <script src="{% static './assets/js/plugins.js' %}"></script>
-        <script src="{% static './assets/js/main.js' %}"></script>
+        <script src="{% static './/js/plugins.js' %}"></script>
+        <script src="{% static './/js/main.js' %}"></script>
 
     </body>
 </html>
